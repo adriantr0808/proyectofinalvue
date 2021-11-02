@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h1>Menu</h1>
     <ul id='menu'>
       <li>
-           <router-link to="/">Home</router-link>
+           <router-link class='router' to="/">Home</router-link>
       </li>
        <li>
-           <router-link to="/tabla">Tabla de multiplicar</router-link>
+           <router-link class='router' to="/tabla">Tabla de multiplicar</router-link>
       </li>
     </ul>
   </div>
@@ -25,5 +24,22 @@ ul#menu li {
   list-style-type: none;
   color: blue;
   text-decoration: none;
+  color:cornsilk;
+}
+
+.router{
+   color:cornsilk;
+   text-decoration: none;
+}
+
+
+ul{
+   background: cornflowerblue;
+   padding:1em;
+   
+}
+.router:hover{
+
+color:black;
 }
 </style>

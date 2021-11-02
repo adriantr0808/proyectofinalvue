@@ -1,7 +1,10 @@
 <template>
+ 
   <div id="app">
-    <Menu />
+     <Menu />
+     <hr/>
     <router-view></router-view>
+    <hr/>
   </div>
 </template>
 
@@ -24,5 +27,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: beige;
 }
+
+
 </style>

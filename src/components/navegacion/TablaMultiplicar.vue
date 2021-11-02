@@ -1,7 +1,10 @@
 <template>
 
 <div>
+ 
     <h1>Tabla</h1>
+ 
+    
     <label>Introduce un numero: </label>
     <input type='text' v-model='numero'/>
     <button @click='tablaMultiplicar()'>Mostrar tabla </button>
@@ -54,5 +57,15 @@ export default {
 table{
     margin: auto;
     margin-top: 1em;
+    margin-bottom: 4em;
+    border: 2px solid black;
 }
+
+hr{
+    margin:2em;
+    }
+
+    button{
+      margin: 1em;
+        }
 </style>
