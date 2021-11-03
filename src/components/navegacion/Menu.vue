@@ -1,11 +1,23 @@
 <template>
   <div>
-    <ul id='menu'>
+    <ul id="menu">
       <li>
-           <router-link class='router' to="/">Home</router-link>
+        <router-link class="router" to="/">Home</router-link>
       </li>
-       <li>
-           <router-link class='router' to="/tabla">Tabla de multiplicar</router-link>
+      <li>
+        <router-link class="router" to="/tabla"
+          >Tabla de multiplicar</router-link
+        >
+      </li>
+      <li>
+        <router-link class="router" to="/deportes">Deportes</router-link>
+      </li>
+
+      <li>
+        <router-link class="router" to="/numeros">Numeros</router-link>
+      </li>
+      <li>
+        <router-link class="router" to="/comics">Comics</router-link>
       </li>
     </ul>
   </div>
@@ -24,22 +36,19 @@ ul#menu li {
   list-style-type: none;
   color: blue;
   text-decoration: none;
-  color:cornsilk;
+  color: cornsilk;
 }
 
-.router{
-   color:cornsilk;
-   text-decoration: none;
+.router {
+  color: cornsilk;
+  text-decoration: none;
 }
 
-
-ul{
-   background: cornflowerblue;
-   padding:1em;
-   
+ul {
+  background: cornflowerblue;
+  padding: 1em;
 }
-.router:hover{
-
-color:black;
+.router:hover {
+  color: black;
 }
 </style>
