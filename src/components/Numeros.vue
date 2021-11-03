@@ -25,6 +25,7 @@ export default {
     },
     // 6º Metodo para sumar los numeros, con un parametor y una variable resultado
     sumarNumParent(num) {
+      
       this.resultado = this.resultado + num;
     },
   },

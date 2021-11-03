@@ -1,18 +1,31 @@
 <template>
   <div>
     <h1>Reforzando Padre-Hijo</h1>
+    <div v-if="this.favorito.length != 0" class="favorito">
+      <h2>Tu comic favorito es:</h2>
+      <h3>{{ this.favorito.titulo }}</h3>
+      <img :src="this.favorito.imagen" width="200px" />
+    </div>
     <div style="margin: 4em">
+      <div>
       <label>Titulo: </label>
       <input type="text" v-model="titulo" />
       <label>Imagen: </label>
       <input type="text" v-model="imagen" />
       <label>Descripcion: </label>
       <input type="text" v-model="desc" />
+      </div>
       <button @click="agregarComic()">Insertar Comic</button>
     </div>
-    <div v-for="(n, index) in comics" :key="index">
+    <div v-for="(comic, index) in comics" :key="index">
       <hr />
-      <ComicHijo :title="n.titulo" :image="n.imagen" :desc="n.descripcion" />
+      <ComicHijo
+        :comic="comic"
+        v-on:seleccionarFavParent="seleccionarFavParent"
+        v-on:eliminarComicParent="eliminarComicParent"
+        v-on:modificarComicParent="modificarComicParent"
+        :index="index"
+      />
     </div>
   </div>
 </template>
@@ -37,7 +50,26 @@ export default {
 
       this.comics.push(comic);
     },
+    seleccionarFavParent(comicfav) {
+      this.favorito = comicfav;
+      console.log(this.favorito);
+    },
+    eliminarComicParent(index) {
+      this.comics.splice(index, 1);
+    },
+    modificarComicParent(index){
+       var tit = this.titulo;
+      var img = this.imagen;
+      var desc = this.desc;
+
+      var comic = this.comics[index];
+      comic.titulo = tit;
+      comic.imagen = img;
+      comic.descripcion=desc;
+
+    }
   },
+
   data() {
     return {
       comics: [
@@ -82,7 +114,32 @@ export default {
       titulo: "",
       imagen: "",
       desc: "",
+      favorito: [],
     };
   },
 };
 </script>
+<style scoped>
+.favorito {
+  background-color: #03a1fc;
+  border: 1px solid black;
+}
+
+.favorito h2,
+h3,
+img {
+  margin: 1em;
+}
+
+.favorito h2 {
+  margin-top: 1em;
+}
+button{
+  margin: 1em;
+}
+
+input{
+  margin-right: 1em;
+}
+
+</style>
