@@ -19,6 +19,16 @@
       <li>
         <router-link class="router" to="/comics">Comics</router-link>
       </li>
+      <li v-for="num in valores" :key="num">
+        <router-link class="router" :to="'/numerodoble/' + num"
+          >Numero Doble {{ num }}</router-link
+        >
+      </li>
+      <li>
+        <router-link class="router" to="/numerodoble/"
+          >SIN Numero Doble</router-link
+        >
+      </li>
     </ul>
   </div>
 </template>
@@ -26,6 +36,11 @@
 <script>
 export default {
   name: "Menu",
+  data() {
+    return {
+      valores: [66, 99, 12],
+    };
+  },
 };
 </script>
 

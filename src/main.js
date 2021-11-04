@@ -6,6 +6,8 @@ import Tabla from './components/navegacion/TablaMultiplicar';
 import Deportes from './components/Deportes';
 import Numeros from './components/Numeros';
 import ComicPadre from './components/ComicPadre';
+import NumeroDoble from './components/NumeroDoble.vue';
+import NumeroTriple from './components/NumeroTriple.vue';
 
 Vue.config.productionTip = false
 
@@ -17,7 +19,9 @@ const routes = [
   { path: '/tabla', component: Tabla },
   { path: '/deportes', component: Deportes },
   { path: '/numeros', component: Numeros },
-  { path: '/comics', component: ComicPadre }
+  { path: '/comics', component: ComicPadre },
+  { path: '/numerodoble/:numero?', component: NumeroDoble },
+  { path: '/numerotriple/:numero?', component: NumeroTriple }
 
 
 ]

@@ -1,20 +1,22 @@
 <template>
- 
   <div id="app">
-     <Menu />
-     <hr/>
+    <Menu />
+    <NumerosAleatorios />
+
     <router-view></router-view>
-    <hr/>
+    <hr />
   </div>
 </template>
 
 <script>
 import Menu from "./components/navegacion/Menu.vue";
+import NumerosAleatorios from "./components/NumerosAleatorios.vue";
 
 export default {
   name: "App",
   components: {
     Menu,
+    NumerosAleatorios,
   },
 };
 </script>
@@ -29,6 +31,4 @@ export default {
   margin-top: 60px;
   background: beige;
 }
-
-
 </style>
